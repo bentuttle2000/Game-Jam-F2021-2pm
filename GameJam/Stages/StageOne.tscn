@@ -26,19 +26,19 @@ position = Vector2( 1120.77, 327.187 )
 scale = Vector2( 31.8609, 42.2039 )
 
 [node name="Enemy" parent="." instance=ExtResource( 2 )]
-position = Vector2( 482.084, 453.731 )
+position = Vector2( 418.844, 392.379 )
 
 [node name="Enemy2" parent="." instance=ExtResource( 2 )]
-position = Vector2( 371.688, 513.9 )
+position = Vector2( 229.163, 408.186 )
 
 [node name="Enemy3" parent="." instance=ExtResource( 2 )]
-position = Vector2( 517.871, 435.139 )
+position = Vector2( 533.917, 289.782 )
 
 [node name="Enemy4" parent="." instance=ExtResource( 2 )]
-position = Vector2( 447.937, 475.385 )
+position = Vector2( 689.569, 332.86 )
 
 [node name="Enemy5" parent="." instance=ExtResource( 2 )]
-position = Vector2( 402.378, 501.538 )
+position = Vector2( 301.383, 500.594 )
 
 [node name="Enemy6" parent="." instance=ExtResource( 2 )]
-position = Vector2( 567.298, 417.962 )
+position = Vector2( 723.037, 486.865 )
