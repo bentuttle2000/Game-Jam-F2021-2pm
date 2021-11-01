@@ -46,4 +46,9 @@ func _fire():
 func dead():
 	queue_free();
 
-
+#----Set active parameters for player physics which are rendered inactive upon entering dialogue----#
+#-Nick Mineo-#
+func set_active(active):
+	set_physics_process(active)
+	set_process(active)
+	set_process_input(active)
