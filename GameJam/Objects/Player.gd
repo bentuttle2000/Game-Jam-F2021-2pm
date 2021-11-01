@@ -42,6 +42,7 @@ func _fire():
 		get_parent().add_child(inst)
 		inst.set_direction(get_global_mouse_position() - global_position);
 
+
 func dead():
 	queue_free();
 
