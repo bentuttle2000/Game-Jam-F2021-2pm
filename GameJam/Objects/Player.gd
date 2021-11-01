@@ -36,3 +36,10 @@ func _fire():
 		get_parent().add_child(inst)
 		inst.set_direction(get_global_mouse_position() - global_position);
 
+#----Set active parameters for player physics which are rendered inactive upon entering dialogue----#
+#-Nick Mineo-#
+func set_active(active):
+	set_physics_process(active)
+	set_process(active)
+	set_process_input(active)
+
