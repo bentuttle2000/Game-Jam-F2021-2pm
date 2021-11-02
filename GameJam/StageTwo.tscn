@@ -1,0 +1,40 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Objects/Enemy.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Objects/Player.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Objects/Wall.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Objects/LevelTransition.tscn" type="PackedScene" id=4]
+
+[node name="StageTwo" type="Node2D"]
+
+[node name="Player" parent="." instance=ExtResource( 2 )]
+position = Vector2( 325.627, 336.837 )
+
+[node name="Wall" parent="." instance=ExtResource( 3 )]
+position = Vector2( 23.1159, 318.431 )
+scale = Vector2( 2.71077, 43.7693 )
+
+[node name="Wall2" parent="." instance=ExtResource( 3 )]
+position = Vector2( 1261.01, 327.398 )
+scale = Vector2( 2.71077, 44.5952 )
+
+[node name="Wall3" parent="." instance=ExtResource( 3 )]
+position = Vector2( 636.634, 15.9195 )
+scale = Vector2( 81.5242, 5.36542 )
+
+[node name="Wall4" parent="." instance=ExtResource( 3 )]
+position = Vector2( 643.241, 600.177 )
+scale = Vector2( 79.7544, 5.60139 )
+
+[node name="Enemy" parent="." instance=ExtResource( 1 )]
+position = Vector2( 754.146, 303.801 )
+
+[node name="Enemy2" parent="." instance=ExtResource( 1 )]
+position = Vector2( 508.739, 442.55 )
+
+[node name="Enemy3" parent="." instance=ExtResource( 1 )]
+position = Vector2( 605.958, 210.357 )
+
+[node name="LevelTransition" parent="." instance=ExtResource( 4 )]
+position = Vector2( 1046.75, 320.791 )
+target_stage = "res://Stages/StageOne.tscn"
