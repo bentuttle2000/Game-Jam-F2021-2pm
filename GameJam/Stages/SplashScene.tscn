@@ -2,7 +2,7 @@
 
 [ext_resource path="res://Assets/SplashScreen.png" type="Texture" id=1]
 [ext_resource path="res://Objects/SceneTransition.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Objects/SplashScene.gd" type="Script" id=3]
+[ext_resource path="res://Scripts/SplashScene.gd" type="Script" id=3]
 
 [node name="Splash" type="Sprite"]
 position = Vector2( 640, 320 )
