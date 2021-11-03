@@ -3,6 +3,7 @@ extends Node
 
 
 func _ready():
+	Music.changeSong("res://Music/LizardDeathJingle.mp3")
 	$MarginContainer/VBoxContainer/VBoxContainer/Respawn.grab_focus()
 
 

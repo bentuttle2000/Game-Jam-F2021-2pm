@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/LizardDeathJingle.mp3-e4c0cb881ebd0c9b37e9e6d9e3996a2a.mp3str"
+
+[deps]
+
+source_file="res://Music/LizardDeathJingle.mp3"
+dest_files=[ "res://.import/LizardDeathJingle.mp3-e4c0cb881ebd0c9b37e9e6d9e3996a2a.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

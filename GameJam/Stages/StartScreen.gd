@@ -3,6 +3,7 @@ extends Node
 
 
 func _ready():
+	Music.changeSong("res://Music/LizardTitle.mp3")
 	$MarginContainer/VBoxContainer/VBoxContainer/StartButton.grab_focus()
 
 

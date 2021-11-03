@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/LizardSounds_02.mp3-444f7e1a57cecbffab43dc3db7a98898.mp3str"
+
+[deps]
+
+source_file="res://Music/SFX/LizardSounds_02.mp3"
+dest_files=[ "res://.import/LizardSounds_02.mp3-444f7e1a57cecbffab43dc3db7a98898.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

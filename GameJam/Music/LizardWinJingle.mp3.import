@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/LizardWinJingle.mp3-a9d75b478ba9b3f18ea8bdb821f3b698.mp3str"
+
+[deps]
+
+source_file="res://Music/LizardWinJingle.mp3"
+dest_files=[ "res://.import/LizardWinJingle.mp3-a9d75b478ba9b3f18ea8bdb821f3b698.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0
