@@ -25,6 +25,7 @@ scale = Vector2( 10.206, 31.7308 )
 [node name="Wall3" parent="." instance=ExtResource( 3 )]
 position = Vector2( 1205.72, 327.187 )
 scale = Vector2( 21.2423, 42.2039 )
+
 [node name="Enemy" parent="." instance=ExtResource( 2 )]
 position = Vector2( 418.844, 392.379 )
 
