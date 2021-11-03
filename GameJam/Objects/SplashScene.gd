@@ -5,4 +5,4 @@ func _ready():
 
 
 func _on_Timer_timeout():
-	$SceneTransition.transition_to("res://Stages/StageOne.tscn")
+	$SceneTransition.transition_to("res://Stages/StartScreen.tscn")
