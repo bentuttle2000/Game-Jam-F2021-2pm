@@ -103,7 +103,7 @@ func _fire():
 
 
 func dead():
-	queue_free();
+	get_tree().change_scene("res://Stages/LoseScreen.tscn")
 
 #----Set active parameters for player physics which are rendered inactive upon entering dialogue----#
 #-Nick Mineo-#
