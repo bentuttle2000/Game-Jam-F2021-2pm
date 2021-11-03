@@ -20,7 +20,8 @@ const chargeRate = .025;
 const chargeMax = 2.0;
 
 func _process(delta):
-	look_at(get_global_mouse_position());
+	#aim wand at mouse
+	get_child(0).look_at(get_global_mouse_position());
 	
 	#if holding attack button, charge. fire on release
 	if Input.is_action_pressed("left_click"):
@@ -94,7 +95,7 @@ func _charge():
 func _fire():
 		curState = STATE.FIRING;
 		var inst = PROJECTILE.instance();
-		inst.position = $Position2D.global_position;
+		inst.position = get_child(0).getWandPosition();
 		get_parent().add_child(inst);
 		inst.set_direction(get_global_mouse_position() - global_position);
 		inst.set_power(chargeAmount);
