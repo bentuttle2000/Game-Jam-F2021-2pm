@@ -26,24 +26,6 @@ scale = Vector2( 10.206, 31.7308 )
 position = Vector2( 1205.72, 327.187 )
 scale = Vector2( 21.2423, 42.2039 )
 
-[node name="Enemy" parent="." instance=ExtResource( 2 )]
-position = Vector2( 418.844, 392.379 )
-
-[node name="Enemy2" parent="." instance=ExtResource( 2 )]
-position = Vector2( 229.163, 408.186 )
-
-[node name="Enemy3" parent="." instance=ExtResource( 2 )]
-position = Vector2( 533.917, 289.782 )
-
-[node name="Enemy4" parent="." instance=ExtResource( 2 )]
-position = Vector2( 689.569, 332.86 )
-
-[node name="Enemy5" parent="." instance=ExtResource( 2 )]
-position = Vector2( 301.383, 500.594 )
-
-[node name="Enemy6" parent="." instance=ExtResource( 2 )]
-position = Vector2( 723.037, 486.865 )
-
 [node name="LevelTransition" parent="." instance=ExtResource( 4 )]
 position = Vector2( 926, 377 )
 target_stage = "res://StageTwo.tscn"
@@ -59,17 +41,8 @@ scale = Vector2( 21.2423, 42.2039 )
 [node name="Enemy" parent="." instance=ExtResource( 2 )]
 position = Vector2( 418.844, 392.379 )
 
-[node name="Enemy" parent="." instance=ExtResource( 2 )]
-position = Vector2( 418.844, 392.379 )
-
 [node name="Enemy2" parent="." instance=ExtResource( 2 )]
 position = Vector2( 229.163, 408.186 )
-
-[node name="Enemy2" parent="." instance=ExtResource( 2 )]
-position = Vector2( 229.163, 408.186 )
-
-[node name="Enemy3" parent="." instance=ExtResource( 2 )]
-position = Vector2( 533.917, 289.782 )
 
 [node name="Enemy3" parent="." instance=ExtResource( 2 )]
 position = Vector2( 543.917, 259.782 )
