@@ -39,22 +39,32 @@ func _process(delta):
 
 #function called every pass that will move the player based on keyboard input
 #written by Ben Tuttle
-func _move():	
+func _move():
 	#check if moving x direction
 	if Input.is_action_pressed("ui_right"): 
 		moveX = DIR.RIGHT;
+		$AnimatedSprite.play("Side")
+		$AnimatedSprite.flip_h = false;
 	elif Input.is_action_pressed("ui_left"): 
 		moveX = DIR.LEFT;
+		$AnimatedSprite.play("Side")
+		$AnimatedSprite.flip_h = true;
 	else:
 		moveX = DIR.NULL;
-
+	
 	#check if moving y direction
 	if Input.is_action_pressed("ui_down"): 
 		moveY = DIR.DOWN;
+		$AnimatedSprite.play("Front")
 	elif Input.is_action_pressed("ui_up"): 
 		moveY = DIR.UP;
+		$AnimatedSprite.play("Back")
 	else:
 		moveY = DIR.NULL;
+
+	#stops movement animation when there's no movement
+	if moveX == DIR.NULL && moveY == DIR.NULL:
+		$AnimatedSprite.stop()
 	
 	#if moving in both x and y (diagonal) cut speed in both directions in half to make consistant speed
 	var curSpeed = SPEED;
