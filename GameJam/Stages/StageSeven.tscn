@@ -1,0 +1,61 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Objects/Wall.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Objects/Enemy.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Objects/LevelTransition.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Objects/Player.tscn" type="PackedScene" id=4]
+
+[node name="StageSeven" type="Node2D"]
+
+[node name="Player" parent="." instance=ExtResource( 4 )]
+position = Vector2( 113.991, 257.39 )
+
+[node name="Wall" parent="." instance=ExtResource( 1 )]
+position = Vector2( 23.1159, 318.431 )
+scale = Vector2( 2.71077, 43.7693 )
+
+[node name="Wall3" parent="." instance=ExtResource( 1 )]
+position = Vector2( 649.296, 15.9195 )
+scale = Vector2( 83.107, 5.36542 )
+
+[node name="Wall4" parent="." instance=ExtResource( 1 )]
+position = Vector2( 643.241, 600.177 )
+scale = Vector2( 79.7544, 5.60139 )
+
+[node name="Enemy" parent="." instance=ExtResource( 2 )]
+position = Vector2( 90.554, 526.514 )
+
+[node name="Enemy2" parent="." instance=ExtResource( 2 )]
+position = Vector2( 268.13, 519.669 )
+
+[node name="Enemy3" parent="." instance=ExtResource( 2 )]
+position = Vector2( 133.655, 511.891 )
+
+[node name="LevelTransition" parent="." instance=ExtResource( 3 )]
+position = Vector2( 1010.41, 516.232 )
+target_stage = "res://Stages/StageOne.tscn"
+
+[node name="Wall5" parent="." instance=ExtResource( 1 )]
+position = Vector2( 1191.44, 335.733 )
+scale = Vector2( 14.8905, 37.4099 )
+
+[node name="Enemy4" parent="." instance=ExtResource( 2 )]
+position = Vector2( 906.838, 318.584 )
+
+[node name="Enemy5" parent="." instance=ExtResource( 2 )]
+position = Vector2( 580.863, 323.183 )
+
+[node name="Wall2" parent="." instance=ExtResource( 1 )]
+position = Vector2( 182.529, 382.112 )
+scale = Vector2( 1, 21.976 )
+
+[node name="Enemy6" parent="." instance=ExtResource( 2 )]
+position = Vector2( 111, 503 )
+
+[node name="Wall6" parent="." instance=ExtResource( 1 )]
+position = Vector2( 368.5, 237 )
+scale = Vector2( 5.6875, 22 )
+
+[node name="Wall7" parent="." instance=ExtResource( 1 )]
+position = Vector2( 693.5, 310.5 )
+scale = Vector2( 4.8125, 19.8125 )
