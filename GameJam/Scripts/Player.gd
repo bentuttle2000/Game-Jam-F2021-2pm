@@ -87,7 +87,6 @@ func _charge():
 	chargeAmount += chargeRate;
 	if chargeAmount > chargeMax:
 		chargeAmount = chargeMax;
-	print_debug(chargeAmount);
 	
 
 #function to fire the projectile when chargeing is released
