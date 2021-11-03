@@ -7,6 +7,10 @@
 
 [node name="StageOne" type="Node2D"]
 
+[node name="LevelTransition" parent="." instance=ExtResource( 4 )]
+position = Vector2( 926, 377 )
+target_stage = "res://StageTwo.tscn"
+
 [node name="Player" parent="." instance=ExtResource( 1 )]
 position = Vector2( 309.528, 250.786 )
 
@@ -43,7 +47,3 @@ position = Vector2( 301.383, 500.594 )
 
 [node name="Enemy6" parent="." instance=ExtResource( 2 )]
 position = Vector2( 723.037, 486.865 )
-
-[node name="LevelTransition" parent="." instance=ExtResource( 4 )]
-position = Vector2( 926, 377 )
-target_stage = "res://StageTwo.tscn"
