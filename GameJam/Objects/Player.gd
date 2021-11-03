@@ -33,9 +33,9 @@ func _process(delta):
 		_move();
 	
 	if get_slide_count() > 0:
-			for i in range(get_slide_count()):
-				if "Enemy" in get_slide_collision(i).collider.name:
-					dead();
+		for i in range(get_slide_count()):
+			if "Enemy" in get_slide_collision(i).collider.name:
+				dead();
 
 #function called every pass that will move the player based on keyboard input
 #written by Ben Tuttle
@@ -105,7 +105,7 @@ func _fire():
 
 func dead():
 	get_tree().change_scene("res://Stages/LoseScreen.tscn")
-
+	
 #----Set active parameters for player physics which are rendered inactive upon entering dialogue----#
 #-Nick Mineo-#
 func set_active(active):
