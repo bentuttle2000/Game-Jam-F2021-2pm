@@ -11,7 +11,7 @@ config_version=4
 [application]
 
 config/name="GameJamMVP"
-
+run/main_scene="res://Stages/StageThree.tscn"
 config/icon="res://icon.png"
 
 [display]
@@ -19,6 +19,10 @@ config/icon="res://icon.png"
 window/size/width=1280
 window/size/height=640
 window/size/resizable=false
+
+[global]
+
+"Default Scene"=false
 
 [input]
 

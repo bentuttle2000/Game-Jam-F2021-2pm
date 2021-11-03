@@ -1,0 +1,85 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Objects/Wall.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Objects/Enemy.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Objects/LevelTransition.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Objects/Player.tscn" type="PackedScene" id=4]
+
+[node name="StageTen" type="Node2D"]
+
+[node name="Player" parent="." instance=ExtResource( 4 )]
+position = Vector2( 288.991, 327.39 )
+
+[node name="Wall" parent="." instance=ExtResource( 1 )]
+position = Vector2( 23.1159, 318.431 )
+scale = Vector2( 2.71077, 43.7693 )
+
+[node name="Wall3" parent="." instance=ExtResource( 1 )]
+position = Vector2( 649.296, 15.9195 )
+scale = Vector2( 83.107, 5.36542 )
+
+[node name="Wall4" parent="." instance=ExtResource( 1 )]
+position = Vector2( 643.241, 600.177 )
+scale = Vector2( 79.7544, 5.60139 )
+
+[node name="Enemy" parent="." instance=ExtResource( 2 )]
+position = Vector2( 148.554, 500.514 )
+
+[node name="Enemy2" parent="." instance=ExtResource( 2 )]
+position = Vector2( 90.13, 131.669 )
+
+[node name="Enemy3" parent="." instance=ExtResource( 2 )]
+position = Vector2( 171.655, 370.891 )
+
+[node name="LevelTransition" parent="." instance=ExtResource( 3 )]
+position = Vector2( 756.41, 308.232 )
+target_stage = "res://Stages/StageOne.tscn"
+
+[node name="Wall5" parent="." instance=ExtResource( 1 )]
+position = Vector2( 1191.44, 335.733 )
+scale = Vector2( 14.8905, 37.4099 )
+
+[node name="Enemy4" parent="." instance=ExtResource( 2 )]
+position = Vector2( 463.838, 188.584 )
+
+[node name="Enemy5" parent="." instance=ExtResource( 2 )]
+position = Vector2( 497.863, 426.183 )
+
+[node name="Enemy6" parent="." instance=ExtResource( 2 )]
+position = Vector2( 145, 319 )
+
+[node name="Enemy7" parent="." instance=ExtResource( 2 )]
+position = Vector2( 937, 299 )
+
+[node name="Enemy8" parent="." instance=ExtResource( 2 )]
+position = Vector2( 716, 127 )
+
+[node name="Wall2" parent="." instance=ExtResource( 1 )]
+position = Vector2( 756, 494.5 )
+scale = Vector2( 6.5, 5.4375 )
+
+[node name="Wall6" parent="." instance=ExtResource( 1 )]
+position = Vector2( 645, 339.5 )
+scale = Vector2( 7.125, 11.6875 )
+
+[node name="Enemy9" parent="." instance=ExtResource( 2 )]
+position = Vector2( 968, 341 )
+
+[node name="Enemy10" parent="." instance=ExtResource( 2 )]
+position = Vector2( 996, 290 )
+
+[node name="Enemy11" parent="." instance=ExtResource( 2 )]
+position = Vector2( 892, 313 )
+
+[node name="Wall7" parent="." instance=ExtResource( 1 )]
+position = Vector2( 763.5, 200.5 )
+scale = Vector2( 5.3125, 4.5625 )
+
+[node name="Enemy12" parent="." instance=ExtResource( 2 )]
+position = Vector2( 294, 166 )
+
+[node name="Enemy13" parent="." instance=ExtResource( 2 )]
+position = Vector2( 639, 199 )
+
+[node name="Enemy14" parent="." instance=ExtResource( 2 )]
+position = Vector2( 1053, 541 )
