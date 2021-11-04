@@ -19,39 +19,49 @@ var chargeAmount = 1.0;
 const chargeRate = .025;
 const chargeMax = 2.0;
 
+var isDead = false
+
 func _process(delta):
 	#aim wand at mouse
-	get_child(0).look_at(get_global_mouse_position());
+	if !isDead:
+		get_child(0).look_at(get_global_mouse_position());
 	
 	#if holding attack button, charge. fire on release
-	if Input.is_action_pressed("left_click"):
-		_charge();
-	elif curState == STATE.CHARGING:
-		_fire();
+		if Input.is_action_pressed("left_click"):
+			_charge();
+		elif curState == STATE.CHARGING:
+			_fire();
 	
-	if (curState != STATE.CHARGING && curState != STATE.FIRING):
-		_move();
+		if (curState != STATE.CHARGING && curState != STATE.FIRING):
+			_move();
 	
-	if get_slide_count() > 0:
-			for i in range(get_slide_count()):
-				if "Enemy" in get_slide_collision(i).collider.name:
-					dead();
+		if get_slide_count() > 0:
+				for i in range(get_slide_count()):
+					if "Enemy" in get_slide_collision(i).collider.name:
+						isDead = true
+						dead();
 
 #function called every pass that will move the player based on keyboard input
 #written by Ben Tuttle
 func _move():	
 	#check if moving x direction
 	if Input.is_action_pressed("ui_right"): 
+		$AnimatedSprite.flip_h = false
+		$AnimatedSprite.play("IdleRight")
 		moveX = DIR.RIGHT;
 	elif Input.is_action_pressed("ui_left"): 
+		$AnimatedSprite.flip_h = true
+		$AnimatedSprite.play("IdleRight")
 		moveX = DIR.LEFT;
 	else:
 		moveX = DIR.NULL;
 
 	#check if moving y direction
-	if Input.is_action_pressed("ui_down"): 
+	if Input.is_action_pressed("ui_down"):
+		$AnimatedSprite.play("IdleDown") 
 		moveY = DIR.DOWN;
 	elif Input.is_action_pressed("ui_up"): 
+		$AnimatedSprite.play("IdleUp")
 		moveY = DIR.UP;
 	else:
 		moveY = DIR.NULL;
@@ -104,7 +114,8 @@ func _fire():
 
 
 func dead():
-	get_tree().change_scene("res://Stages/LoseScreen.tscn")
+	$Timer.start()
+	$AnimatedSprite.play("Dead")
 
 #----Set active parameters for player physics which are rendered inactive upon entering dialogue----#
 #-Nick Mineo-#
@@ -112,3 +123,7 @@ func set_active(active):
 	set_physics_process(active)
 	set_process(active)
 	set_process_input(active)
+
+
+func _on_Timer_timeout():
+	get_tree().change_scene("res://Stages/LoseScreen.tscn")
