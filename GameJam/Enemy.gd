@@ -1,7 +1,7 @@
 extends KinematicBody2D
 
 var is_dead = false;
-const SPEED = 50;
+const SPEED = 75;
 var PlayerPosition = Vector2();
 var CurrentPosition = Vector2();
 var velocity = Vector2();
@@ -29,9 +29,11 @@ func _process(delta):
 
 
 func dead():
-	$AnimatedSprite.play("Dead")
-	is_dead = true;
-	$Timer.start();
+	if !is_dead:
+		$AnimatedSprite.play("Dead")
+		$CollisionShape2D.set_deferred("disabled", true)
+		is_dead = true;
+		$Timer.start();
 
 
 func _on_Timer_timeout():
