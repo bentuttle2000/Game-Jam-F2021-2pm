@@ -33,7 +33,7 @@ position = Vector2( 391.655, 500.891 )
 
 [node name="LevelTransition" parent="." instance=ExtResource( 3 )]
 position = Vector2( 811.409, 342.232 )
-target_stage = "res://Stages/StageOne.tscn"
+target_stage = "res://Stages/StageBoss.tscn"
 
 [node name="Wall5" parent="." instance=ExtResource( 1 )]
 position = Vector2( 1191.44, 335.733 )
