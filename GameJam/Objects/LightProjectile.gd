@@ -15,6 +15,9 @@ func set_power(p):
 	power = p;
 
 func _physics_process(delta):
+	$Light2D.energy = power / 2;
+	$Sprite.scale.x = power;
+	$Sprite.scale.y = power;
 	velocity.x = SPEED * power * delta * direction.normalized().x;
 	velocity.y = SPEED * power * delta * direction.normalized().y;
 	translate(velocity);
