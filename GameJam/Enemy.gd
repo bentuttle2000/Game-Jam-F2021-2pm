@@ -2,7 +2,7 @@ extends KinematicBody2D
 
 export var HP = 1
 var is_dead = false;
-const SPEED = 50;
+const SPEED = 75;
 var PlayerPosition = Vector2();
 var CurrentPosition = Vector2();
 var velocity = Vector2();

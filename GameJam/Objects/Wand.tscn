@@ -10,9 +10,9 @@ __meta__ = {
 }
 
 [node name="Position2D" type="Position2D" parent="."]
-position = Vector2( 25.5453, 0 )
+position = Vector2( 29.5589, 0 )
 
 [node name="Sprite" type="Sprite" parent="."]
-position = Vector2( 20, 0 )
+position = Vector2( 23.9764, 0 )
 rotation = 1.5708
 texture = ExtResource( 1 )

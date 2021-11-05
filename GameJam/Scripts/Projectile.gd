@@ -13,8 +13,10 @@ func set_power(p):
 	power = p;
 
 func _physics_process(delta):
-	velocity.x = SPEED * power * delta * direction.normalized().x;
-	velocity.y = SPEED * power * delta * direction.normalized().y;
+	$Sprite.scale.x = power;
+	$Sprite.scale.y = power;
+	velocity.x = SPEED * delta * direction.normalized().x;
+	velocity.y = SPEED * delta * direction.normalized().y;
 	translate(velocity);
 
 func _on_Projectile_body_entered(body):

@@ -29,7 +29,7 @@ func _process(delta):
 	if !isDead:
 		get_child(0).look_at(get_global_mouse_position());
 	
-	#if holding attack button, charge. fire on release
+		#if holding attack button, charge. fire on release
 		if Input.is_action_pressed("left_click"):
 			_charge();
 		elif curState == STATE.CHARGING:
