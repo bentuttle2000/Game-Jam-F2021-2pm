@@ -22,7 +22,10 @@ func _physics_process(delta):
 func _on_Projectile_body_entered(body):
 	if "Enemy" in body.name:
 		body.dead();
-	queue_free();
+		#Allows for projectile to penetrate targets when charged
+		power = power - 0.2;
+		if power <= 1.2:
+			queue_free();
 
 
 func _on_VisibilityNotifier2D_screen_exited():
