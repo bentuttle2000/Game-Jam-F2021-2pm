@@ -1,6 +1,6 @@
 extends KinematicBody2D;
 
-const SPEED = 50;
+const SPEED = 250;
 
 var velocity = Vector2();
 
@@ -10,11 +10,14 @@ var moveX = DIR.NULL;
 var moveY = DIR.NULL;
 
 const PROJECTILE = preload("res://Objects/Projectile.tscn");
+const LIGHTPROJECTILE = preload("res://Objects/LightProjectile.tscn");
 
 enum STATE {IDLE, MOVING, CHARGING, FIRING};
 
 var curState = STATE.IDLE;
 
+var goldCnt = 0;
+var spellNum = 0;
 var chargeAmount = 1.0;
 const chargeRate = .025;
 const chargeMax = 2.0;
@@ -104,13 +107,25 @@ func _charge():
 #written by Ben Tuttle
 func _fire():
 		curState = STATE.FIRING;
-		var inst = PROJECTILE.instance();
-		inst.position = get_child(0).getWandPosition();
-		get_parent().add_child(inst);
-		inst.set_direction(get_global_mouse_position() - global_position);
-		inst.set_power(chargeAmount);
-		chargeAmount = 1;
-		curState = STATE.IDLE;
+		if spellNum == 0:
+			var inst = PROJECTILE.instance();
+			inst.position = get_child(0).getWandPosition();
+			get_parent().add_child(inst);
+			inst.set_direction(get_global_mouse_position() - global_position);
+			inst.set_power(chargeAmount);
+			chargeAmount = 1;
+			curState = STATE.IDLE;
+		elif spellNum == 1:
+			var inst = LIGHTPROJECTILE.instance();
+			inst.position = get_child(0).getWandPosition();
+			get_parent().add_child(inst);
+			inst.set_direction(get_global_mouse_position() - global_position);
+			inst.set_power(chargeAmount);
+			chargeAmount = 1;
+			curState = STATE.IDLE;
+
+func flashup_powerup():
+	spellNum = 1
 
 
 func dead():

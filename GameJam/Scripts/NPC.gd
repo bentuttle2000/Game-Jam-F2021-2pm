@@ -11,6 +11,7 @@ func _input(event):
 #THE THING:
 func find_and_use_dialogue():
 	var dialogue_player = get_node_or_null("DialoguePlayer") #obtain the DialoguePlayer child node.
-	
+
 	if dialogue_player: 	   #if it exists,
 		dialogue_player.play() #play its contents.
+

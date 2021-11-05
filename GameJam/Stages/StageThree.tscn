@@ -28,7 +28,7 @@ position = Vector2( 605.958, 210.357 )
 
 [node name="LevelTransition" parent="." instance=ExtResource( 3 )]
 position = Vector2( 1171.34, 458.854 )
-target_stage = "res://Stages/StageOne.tscn"
+target_stage = "res://Stages/StageFour.tscn"
 
 [node name="Enemy4" parent="." instance=ExtResource( 2 )]
 position = Vector2( 1169.3, 328.974 )
