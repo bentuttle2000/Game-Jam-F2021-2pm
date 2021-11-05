@@ -1,6 +1,7 @@
 extends KinematicBody2D
 
 export var HP = 1
+export var isBoss = false;
 var is_dead = false;
 const SPEED = 75;
 var PlayerPosition = Vector2();
@@ -9,7 +10,10 @@ var velocity = Vector2();
 
 func _process(delta):
 	if !is_dead:
-		$AnimatedSprite.play("Idle")
+		if !isBoss:
+			$AnimatedSprite.play("Idle")
+		else:
+			$AnimatedSprite.play("BossIdle")
 		if get_owner() != null:
 			PlayerPosition = get_tree().current_scene.get_node("Player").get_position();
 		CurrentPosition = get_position();
@@ -33,7 +37,10 @@ func dead():
 	HP -= 1
 	if HP <= 0:
 		$CollisionShape2D.set_deferred("disabled", true)
-		$AnimatedSprite.play("Dead")
+		if !isBoss:
+			$AnimatedSprite.play("Dead")
+		else:
+			$AnimatedSprite.play("BossDead")
 		is_dead = true;
 		$Timer.start();
 
