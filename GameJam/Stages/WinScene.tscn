@@ -1,29 +1,36 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Objects/SceneTransition.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Assets/YouWin.png" type="Texture" id=2]
 [ext_resource path="res://Assets/MainMenuButton.png" type="Texture" id=3]
 [ext_resource path="res://WinScene.gd" type="Script" id=4]
+[ext_resource path="res://Assets/BG_FACE3.png" type="Texture" id=5]
 
 [node name="WinScene" type="Sprite"]
-position = Vector2( 664, 176 )
-texture = ExtResource( 2 )
+position = Vector2( 642.582, 313.331 )
+z_index = 1
+texture = ExtResource( 5 )
 script = ExtResource( 4 )
 
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( -19.3407, -204.481 )
+scale = Vector2( 1, 1.20999 )
+texture = ExtResource( 2 )
+
 [node name="TextureButton" type="TextureButton" parent="."]
-margin_left = -80.0
-margin_top = 216.0
-margin_right = 80.0
-margin_bottom = 296.0
+margin_left = -83.7798
+margin_top = 126.546
+margin_right = 76.2202
+margin_bottom = 206.546
 texture_normal = ExtResource( 3 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="SceneTransition" parent="." instance=ExtResource( 1 )]
-margin_left = -664.0
-margin_top = -176.0
-margin_right = -115.0
-margin_bottom = 308.0
+margin_left = -892.046
+margin_top = -419.165
+margin_right = -343.046
+margin_bottom = 64.8354
 
 [connection signal="button_up" from="TextureButton" to="." method="_on_TextureButton_button_up"]
