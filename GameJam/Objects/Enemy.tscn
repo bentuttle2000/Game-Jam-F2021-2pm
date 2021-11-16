@@ -13,15 +13,15 @@
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
-"frames": [ ExtResource( 6 ), ExtResource( 9 ), ExtResource( 3 ), ExtResource( 7 ) ],
-"loop": true,
-"name": "Idle",
-"speed": 12.0
-}, {
 "frames": [ ExtResource( 1 ), ExtResource( 5 ), ExtResource( 8 ), ExtResource( 4 ) ],
 "loop": false,
 "name": "Dead",
 "speed": 5.0
+}, {
+"frames": [ ExtResource( 6 ), ExtResource( 9 ), ExtResource( 3 ), ExtResource( 7 ) ],
+"loop": true,
+"name": "Idle",
+"speed": 12.0
 }, {
 "frames": [ ExtResource( 10 ) ],
 "loop": true,

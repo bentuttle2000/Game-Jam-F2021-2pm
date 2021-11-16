@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://Assets/player Sprites/lizardwizard_1.png" type="Texture" id=1]
 [ext_resource path="res://Scripts/Player.gd" type="Script" id=2]
@@ -10,6 +10,10 @@
 [ext_resource path="res://Assets/player Sprites/playerDeath_4.png" type="Texture" id=8]
 [ext_resource path="res://Assets/player Sprites/playerDeath_3.png" type="Texture" id=9]
 [ext_resource path="res://Assets/player Sprites/playerDeath_2.png" type="Texture" id=10]
+[ext_resource path="res://Assets/Health0.png" type="Texture" id=11]
+[ext_resource path="res://Assets/Health3.png" type="Texture" id=12]
+[ext_resource path="res://Assets/Health1.png" type="Texture" id=13]
+[ext_resource path="res://Assets/Health2.png" type="Texture" id=14]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 10.1725, 15.6982 )
@@ -21,20 +25,43 @@ animations = [ {
 "name": "IdleDown",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 1 ) ],
-"loop": true,
-"name": "IdleUp",
-"speed": 5.0
+"frames": [ ExtResource( 6 ), ExtResource( 7 ), ExtResource( 10 ), ExtResource( 9 ), ExtResource( 8 ) ],
+"loop": false,
+"name": "Dead",
+"speed": 12.0
 }, {
 "frames": [ ExtResource( 4 ) ],
 "loop": true,
 "name": "IdleRight",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 6 ), ExtResource( 7 ), ExtResource( 10 ), ExtResource( 9 ), ExtResource( 8 ) ],
-"loop": false,
-"name": "Dead",
-"speed": 12.0
+"frames": [ ExtResource( 1 ) ],
+"loop": true,
+"name": "IdleUp",
+"speed": 5.0
+} ]
+
+[sub_resource type="SpriteFrames" id=3]
+animations = [ {
+"frames": [ ExtResource( 14 ) ],
+"loop": true,
+"name": "Health2",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 11 ) ],
+"loop": true,
+"name": "Health0",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 12 ) ],
+"loop": true,
+"name": "Health3",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 13 ) ],
+"loop": true,
+"name": "Health1",
+"speed": 5.0
 } ]
 
 [node name="Player" type="KinematicBody2D"]
@@ -53,4 +80,15 @@ animation = "IdleDown"
 [node name="Timer" type="Timer" parent="."]
 wait_time = 0.5
 
+[node name="HealthBar" type="AnimatedSprite" parent="."]
+position = Vector2( 0.0589933, -22.358 )
+scale = Vector2( 0.66522, 0.620238 )
+frames = SubResource( 3 )
+animation = "Health3"
+
+[node name="DamageCooldown" type="Timer" parent="."]
+wait_time = 0.25
+one_shot = true
+
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
+[connection signal="timeout" from="DamageCooldown" to="." method="_on_DamageCooldown_timeout"]

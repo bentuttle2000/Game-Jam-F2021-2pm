@@ -31,7 +31,10 @@ func _process(delta):
 			velocity.y = 0;
 		move_and_slide(velocity);
 
-
+		if get_slide_count() > 0:
+			for i in range (get_slide_count()):
+				if "Player" in get_slide_collision(i).collider.name:
+					get_slide_collision(i).collider.dead(1)
 
 func dead():
 	HP -= 1
