@@ -18,11 +18,6 @@ animations = [ {
 "name": "Idle",
 "speed": 12.0
 }, {
-"frames": [ ExtResource( 1 ), ExtResource( 5 ), ExtResource( 8 ), ExtResource( 4 ) ],
-"loop": false,
-"name": "Dead",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 10 ) ],
 "loop": true,
 "name": "BossIdle",
@@ -31,6 +26,11 @@ animations = [ {
 "frames": [ ExtResource( 10 ), null, ExtResource( 10 ), null, ExtResource( 10 ), null, ExtResource( 10 ), null, ExtResource( 10 ), null ],
 "loop": false,
 "name": "BossDead",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 1 ), ExtResource( 5 ), ExtResource( 8 ), ExtResource( 4 ) ],
+"loop": false,
+"name": "Dead",
 "speed": 5.0
 } ]
 

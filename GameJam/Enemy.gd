@@ -2,8 +2,10 @@ extends KinematicBody2D
 
 export var HP = 1
 export var isBoss = false;
+export var BossNumber = 0;
 var is_dead = false;
 const SPEED = 75;
+const BOSSONEPOWER = preload("res://Objects/MultiShotPowerUp.tscn");
 var PlayerPosition = Vector2();
 var CurrentPosition = Vector2();
 var velocity = Vector2();
@@ -41,6 +43,10 @@ func dead():
 			$AnimatedSprite.play("Dead")
 		else:
 			$AnimatedSprite.play("BossDead")
+			if BossNumber == 1:
+				var inst = BOSSONEPOWER.instance();
+				inst.position = global_position;
+				get_parent().add_child(inst);
 		is_dead = true;
 		$Timer.start();
 

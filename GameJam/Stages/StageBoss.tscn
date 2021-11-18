@@ -68,3 +68,4 @@ position = Vector2( 1128, 328 )
 scale = Vector2( 4.84, 4.84 )
 HP = 10
 isBoss = true
+BossNumber = 1

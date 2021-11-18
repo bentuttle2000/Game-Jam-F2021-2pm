@@ -123,9 +123,30 @@ func _fire():
 			inst.set_power(chargeAmount);
 			chargeAmount = 1;
 			curState = STATE.IDLE;
+		elif spellNum == 2:
+			var inst = PROJECTILE.instance();
+			var inst1 = LIGHTPROJECTILE.instance();
+			var inst2 = PROJECTILE.instance();
+			inst.position = get_child(0).getWandPosition();
+			get_parent().add_child(inst);
+			inst1.position = get_child(0).getWandPosition();
+			get_parent().add_child(inst1);
+			inst2.position = get_child(0).getWandPosition();
+			get_parent().add_child(inst2);
+			inst.set_direction((get_global_mouse_position() - global_position));
+			inst.set_power(chargeAmount);
+			inst1.set_direction((get_global_mouse_position() - global_position));
+			inst1.set_power(chargeAmount);
+			inst2.set_direction(get_global_mouse_position() - global_position);
+			inst2.set_power(chargeAmount);
+			chargeAmount = 1;
+			curState = STATE.IDLE;
 
 func flashup_powerup():
 	spellNum = 1
+
+func multishot_powerup():
+	spellNum = 2
 
 
 func dead():
