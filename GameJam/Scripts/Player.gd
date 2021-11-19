@@ -21,8 +21,10 @@ var spellNum = 0;
 var chargeAmount = 1.0;
 const chargeRate = .025;
 const chargeMax = 2.0;
+var hp = 3;
 
 var isDead = false
+var vulnerable = true
 
 func _process(delta):
 	#aim wand at mouse
@@ -41,8 +43,14 @@ func _process(delta):
 		if get_slide_count() > 0:
 				for i in range(get_slide_count()):
 					if "Enemy" in get_slide_collision(i).collider.name:
-						isDead = true
-						dead();
+						dead(1);
+						
+	if hp == 1:
+		$HealthBar.play("Health1")
+	if hp == 2:
+		$HealthBar.play("Health2")
+	if hp == 3:
+		$HealthBar.play("Health3")
 
 #function called every pass that will move the player based on keyboard input
 #written by Ben Tuttle
@@ -149,9 +157,19 @@ func multishot_powerup():
 	spellNum = 2
 
 
-func dead():
-	$Timer.start()
-	$AnimatedSprite.play("Dead")
+func dead(damage):
+	if vulnerable == true:
+		hp = hp - damage
+		vulnerable = false
+		$DamageCooldown.start()
+		if  hp <= 0:
+			isDead = true
+			hp = 0
+			velocity = Vector2(0, 0)
+			$AnimatedSprite.play("Dead")
+			$HealthBar.play("Health0")
+			$CollisionShape2D.set_deferred("disabled", true)
+			$Timer.start()
 
 #----Set active parameters for player physics which are rendered inactive upon entering dialogue----#
 #-Nick Mineo-#
@@ -163,3 +181,7 @@ func set_active(active):
 
 func _on_Timer_timeout():
 	get_tree().change_scene("res://Stages/LoseScreen.tscn")
+
+
+func _on_DamageCooldown_timeout():
+	vulnerable = true
