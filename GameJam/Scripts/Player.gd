@@ -12,6 +12,7 @@ var moveY = DIR.NULL;
 const PROJECTILE = preload("res://Objects/Projectile.tscn");
 const LIGHTPROJECTILE = preload("res://Objects/LightProjectile.tscn");
 
+
 enum STATE {IDLE, MOVING, CHARGING, FIRING};
 
 var curState = STATE.IDLE;
@@ -25,6 +26,7 @@ var hp = 3;
 
 var isDead = false
 var vulnerable = true
+var active_shield = false
 
 func _process(delta):
 	#aim wand at mouse
@@ -45,12 +47,21 @@ func _process(delta):
 					if "Enemy" in get_slide_collision(i).collider.name:
 						dead(1);
 						
+		
+		
 	if hp == 1:
 		$HealthBar.play("Health1")
 	if hp == 2:
 		$HealthBar.play("Health2")
 	if hp == 3:
 		$HealthBar.play("Health3")
+		
+	if active_shield == false:
+		$Shield.visible = false
+		$ShieldCollision.set_deferred("disabled", true)
+	if active_shield == true:
+		$Shield.visible = true
+		$ShieldCollision.set_deferred("disabled", false)
 
 #function called every pass that will move the player based on keyboard input
 #written by Ben Tuttle
@@ -158,6 +169,9 @@ func multishot_powerup():
 
 
 func dead(damage):
+	if vulnerable == false:
+		return
+	
 	if vulnerable == true:
 		hp = hp - damage
 		vulnerable = false
@@ -184,4 +198,13 @@ func _on_Timer_timeout():
 
 
 func _on_DamageCooldown_timeout():
+	vulnerable = true
+	
+func shield_powerup():
+	$ShieldTimer.start()
+	active_shield = true
+	vulnerable = false
+
+func _on_ShieldTimer_timeout():
+	active_shield = false
 	vulnerable = true

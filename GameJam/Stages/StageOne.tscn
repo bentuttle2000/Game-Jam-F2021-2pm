@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Objects/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Objects/Enemy.tscn" type="PackedScene" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://Objects/playMusic.gd" type="Script" id=5]
 [ext_resource path="res://Assets/groundtileset.tres" type="TileSet" id=6]
 [ext_resource path="res://UI/DialoguePlayer.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Objects/Shieldpowerup.tscn" type="PackedScene" id=8]
 
 [node name="StageOne" type="Node2D"]
 script = ExtResource( 5 )
@@ -23,6 +24,7 @@ target_stage = "res://StageTwo.tscn"
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
 position = Vector2( 309.528, 250.786 )
+z_index = 1
 
 [node name="LevelTransition" parent="." instance=ExtResource( 4 )]
 position = Vector2( 926, 377 )
@@ -56,3 +58,6 @@ position = Vector2( 217.743, 78.9431 )
 [node name="DialoguePlayer" parent="NPC" instance=ExtResource( 7 )]
 
 [node name="NPC" type="Sprite" parent="NPC"]
+
+[node name="Area2D" parent="." instance=ExtResource( 8 )]
+position = Vector2( 1038.35, 161.16 )
