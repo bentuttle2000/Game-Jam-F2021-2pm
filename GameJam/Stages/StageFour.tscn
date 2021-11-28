@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Assets/groundtileset.tres" type="TileSet" id=1]
 [ext_resource path="res://Assets/Effects/light.png" type="Texture" id=2]
@@ -9,6 +9,7 @@
 [ext_resource path="res://Assets/Effects/spot.png" type="Texture" id=7]
 [ext_resource path="res://Objects/Enemy.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Assets/spritesheet_1.png" type="Texture" id=9]
+[ext_resource path="res://Stages/Pause.tscn" type="PackedScene" id=10]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 11.1463, 15.9906 )
@@ -89,3 +90,8 @@ target_stage = "res://Stages/StageFive.tscn"
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 color = Color( 0.0941176, 0.12549, 0.168627, 1 )
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Pause" parent="CanvasLayer" instance=ExtResource( 10 )]
+visible = false

@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Assets/groundtileset.tres" type="TileSet" id=1]
 [ext_resource path="res://Objects/Enemy.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Objects/LevelTransition.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Objects/Player.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Stages/Pause.tscn" type="PackedScene" id=5]
 
 [node name="StageTwo" type="Node2D"]
 
@@ -29,3 +30,8 @@ position = Vector2( 605.958, 210.357 )
 [node name="LevelTransition" parent="." instance=ExtResource( 3 )]
 position = Vector2( 1046.75, 320.791 )
 target_stage = "res://Stages/StageThree.tscn"
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Pause" parent="CanvasLayer" instance=ExtResource( 5 )]
+visible = false
