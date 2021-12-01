@@ -16,22 +16,22 @@ animations = [ {
 "frames": [ ExtResource( 1 ), ExtResource( 5 ), ExtResource( 8 ), ExtResource( 4 ) ],
 "loop": false,
 "name": "Dead",
-"speed": 5.0
+"speed": 2.0
 }, {
 "frames": [ ExtResource( 10 ) ],
 "loop": true,
 "name": "BossIdle",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 6 ), ExtResource( 9 ), ExtResource( 3 ), ExtResource( 7 ) ],
-"loop": true,
-"name": "Idle",
-"speed": 12.0
-}, {
 "frames": [ ExtResource( 10 ), null, ExtResource( 10 ), null, ExtResource( 10 ), null, ExtResource( 10 ), null, ExtResource( 10 ), null ],
 "loop": false,
 "name": "BossDead",
 "speed": 5.0
+}, {
+"frames": [ ExtResource( 6 ), ExtResource( 9 ), ExtResource( 3 ), ExtResource( 7 ) ],
+"loop": true,
+"name": "Idle",
+"speed": 2.0
 } ]
 
 [sub_resource type="RectangleShape2D" id=2]
@@ -62,4 +62,9 @@ shape = SubResource( 2 )
 [node name="DetectionRadius" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource( 3 )
 
+[node name="IceTimer" type="Timer" parent="."]
+wait_time = 3.0
+one_shot = true
+
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
+[connection signal="timeout" from="IceTimer" to="." method="_on_IceTimer_timeout"]

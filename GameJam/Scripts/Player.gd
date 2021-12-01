@@ -11,6 +11,7 @@ var moveY = DIR.NULL;
 
 const PROJECTILE = preload("res://Objects/Projectile.tscn");
 const LIGHTPROJECTILE = preload("res://Objects/LightProjectile.tscn");
+const ICEBALL = preload("res://Objects/IceBall.tscn");
 
 enum STATE {IDLE, MOVING, CHARGING, FIRING};
 
@@ -25,6 +26,8 @@ var hp = 3;
 
 var isDead = false
 var vulnerable = true
+var active_shield = false
+var ice_powerup = false
 
 func _process(delta):
 	#aim wand at mouse
@@ -39,6 +42,10 @@ func _process(delta):
 	
 		if (curState != STATE.CHARGING && curState != STATE.FIRING):
 			_move();
+			
+			
+		if (Input.is_action_just_pressed("right_click")) && (ice_powerup == true):
+			_ice_fire()
 	
 		if get_slide_count() > 0:
 				for i in range(get_slide_count()):
@@ -51,6 +58,13 @@ func _process(delta):
 		$HealthBar.play("Health2")
 	if hp == 3:
 		$HealthBar.play("Health3")
+		
+	if active_shield == false:
+		$ShieldCollision.set_deferred("disabled", true)
+		$Shield.visible = false
+	if active_shield == true:
+		$ShieldCollision.set_deferred("disabled", false)
+		$Shield.visible = true
 
 #function called every pass that will move the player based on keyboard input
 #written by Ben Tuttle
@@ -158,6 +172,9 @@ func multishot_powerup():
 
 
 func dead(damage):
+	if vulnerable == false:
+		return
+	
 	if vulnerable == true:
 		hp = hp - damage
 		vulnerable = false
@@ -185,3 +202,28 @@ func _on_Timer_timeout():
 
 func _on_DamageCooldown_timeout():
 	vulnerable = true
+	
+func health_pickup():
+	if hp < 3 && hp != 0:
+		hp = hp + 1
+	else:
+		hp = hp + 0
+
+func shield_powerup():
+	$ShieldTimer.start()
+	active_shield = true
+	vulnerable = false
+	
+func ice_powerup():
+	ice_powerup = true
+	
+func _on_ShieldTimer_timeout():
+	active_shield = false
+	vulnerable = true
+
+func _ice_fire():
+	var iceball = ICEBALL.instance()
+	iceball.set_direction(get_global_mouse_position() - global_position);
+	get_parent().add_child(iceball);
+	iceball.position = get_child(0).getWandPosition();
+	
