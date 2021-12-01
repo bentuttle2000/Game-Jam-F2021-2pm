@@ -29,7 +29,7 @@ position = Vector2( 40, 296 )
 
 [node name="LevelTransition" parent="." instance=ExtResource( 4 )]
 position = Vector2( 1216, 320 )
-target_stage = "res://Stages/WinScene.tscn"
+target_stage = "res://Stages/StageSix.tscn"
 
 [node name="Node2D" type="Node2D" parent="."]
 
@@ -64,7 +64,7 @@ position = Vector2( 672, 64 )
 position = Vector2( 672, 576 )
 
 [node name="Enemy11" parent="Node2D" instance=ExtResource( 2 )]
-position = Vector2( 1128, 328 )
+position = Vector2( 1128, 327.406 )
 scale = Vector2( 4.84, 4.84 )
 HP = 10
 isBoss = true
