@@ -133,7 +133,7 @@ func _fire():
 			curState = STATE.IDLE;
 		elif spellNum == 2:
 			var inst = PROJECTILE.instance();
-			var inst1 = LIGHTPROJECTILE.instance();
+			var inst1 = PROJECTILE.instance();
 			var inst2 = PROJECTILE.instance();
 			inst.position = get_child(0).getWandPosition();
 			get_parent().add_child(inst);
@@ -141,10 +141,18 @@ func _fire():
 			get_parent().add_child(inst1);
 			inst2.position = get_child(0).getWandPosition();
 			get_parent().add_child(inst2);
+			var t = Timer.new()
+			t.set_wait_time(.1)
+			t.set_one_shot(true)
+			self.add_child(t)
 			inst.set_direction((get_global_mouse_position() - global_position));
 			inst.set_power(chargeAmount);
+			t.start()
+			yield(t, "timeout")
 			inst1.set_direction((get_global_mouse_position() - global_position));
 			inst1.set_power(chargeAmount);
+			t.start()
+			yield(t, "timeout")
 			inst2.set_direction(get_global_mouse_position() - global_position);
 			inst2.set_power(chargeAmount);
 			chargeAmount = 1;

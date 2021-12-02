@@ -34,41 +34,39 @@ position = Vector2( 40, 296 )
 position = Vector2( 1216, 320 )
 target_stage = "res://Stages/StageSix.tscn"
 
-[node name="Node2D" type="Node2D" parent="."]
+[node name="Node2d" type="Node2D" parent="."]
 
-[node name="Enemy" parent="Node2D" instance=ExtResource( 2 )]
+[node name="Enemy" parent="Node2d" instance=ExtResource( 2 )]
 position = Vector2( 128, 64 )
 
-[node name="Enemy2" parent="Node2D" instance=ExtResource( 2 )]
+[node name="Enemy2" parent="Node2d" instance=ExtResource( 2 )]
 position = Vector2( 128, 576 )
 
-[node name="Enemy3" parent="Node2D" instance=ExtResource( 2 )]
+[node name="Enemy3" parent="Node2d" instance=ExtResource( 2 )]
 position = Vector2( 384, 64 )
 
-[node name="Enemy4" parent="Node2D" instance=ExtResource( 2 )]
+[node name="Enemy4" parent="Node2d" instance=ExtResource( 2 )]
 position = Vector2( 384, 576 )
 
-[node name="Enemy5" parent="Node2D" instance=ExtResource( 2 )]
+[node name="Enemy5" parent="Node2d" instance=ExtResource( 2 )]
 position = Vector2( 640, 64 )
 
-[node name="Enemy6" parent="Node2D" instance=ExtResource( 2 )]
+[node name="Enemy6" parent="Node2d" instance=ExtResource( 2 )]
 position = Vector2( 640, 576 )
 
-[node name="Enemy7" parent="Node2D" instance=ExtResource( 2 )]
+[node name="Enemy7" parent="Node2d" instance=ExtResource( 2 )]
 position = Vector2( 416, 64 )
 
-[node name="Enemy8" parent="Node2D" instance=ExtResource( 2 )]
+[node name="Enemy8" parent="Node2d" instance=ExtResource( 2 )]
 position = Vector2( 416, 576 )
 
-[node name="Enemy9" parent="Node2D" instance=ExtResource( 2 )]
+[node name="Enemy9" parent="Node2d" instance=ExtResource( 2 )]
 position = Vector2( 672, 64 )
 
-[node name="Enemy10" parent="Node2D" instance=ExtResource( 2 )]
+[node name="Enemy10" parent="Node2d" instance=ExtResource( 2 )]
 position = Vector2( 672, 576 )
 
-[node name="Enemy11" parent="Node2D" instance=ExtResource( 2 )]
-position = Vector2( 1128, 327.406 )
-scale = Vector2( 4.84, 4.84 )
+
 HP = 10
 isBoss = true
 BossNumber = 1
