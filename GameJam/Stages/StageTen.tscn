@@ -39,7 +39,7 @@ shadow_filter_smooth = 50.0
 
 [node name="LevelTransition" parent="." instance=ExtResource( 3 )]
 position = Vector2( 756.41, 308.232 )
-target_stage = "res://Stages/StageOne.tscn"
+target_stage = "res://Stages/WinScene.tscn"
 
 [node name="Enemies" type="Node2D" parent="."]
 
