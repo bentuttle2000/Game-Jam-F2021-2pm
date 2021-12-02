@@ -13,9 +13,9 @@
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
-"frames": [ ExtResource( 1 ), ExtResource( 5 ), ExtResource( 8 ), ExtResource( 4 ) ],
+"frames": [ ExtResource( 10 ), null, ExtResource( 10 ), null, ExtResource( 10 ), null, ExtResource( 10 ), null, ExtResource( 10 ), null ],
 "loop": false,
-"name": "Dead",
+"name": "BossDead",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 10 ) ],
@@ -28,9 +28,9 @@ animations = [ {
 "name": "Idle",
 "speed": 12.0
 }, {
-"frames": [ ExtResource( 10 ), null, ExtResource( 10 ), null, ExtResource( 10 ), null, ExtResource( 10 ), null, ExtResource( 10 ), null ],
+"frames": [ ExtResource( 1 ), ExtResource( 5 ), ExtResource( 8 ), ExtResource( 4 ) ],
 "loop": false,
-"name": "BossDead",
+"name": "Dead",
 "speed": 5.0
 } ]
 

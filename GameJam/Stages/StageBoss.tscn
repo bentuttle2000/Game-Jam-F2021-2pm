@@ -1,11 +1,14 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Objects/Player.tscn" type="PackedScene" id=1]
-[ext_resource path="res://Objects/Enemy.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Objects/Enemies/Enemy.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Assets/Furnituretileset.tres" type="TileSet" id=3]
 [ext_resource path="res://Objects/LevelTransition.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Objects/playMusic.gd" type="Script" id=5]
 [ext_resource path="res://Assets/groundtileset.tres" type="TileSet" id=6]
+[ext_resource path="res://Objects/Enemies/Bat.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Objects/Enemies/Living Potion.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Objects/Enemies/Spider.tscn" type="PackedScene" id=9]
 
 [node name="StageOne" type="Node2D"]
 script = ExtResource( 5 )
@@ -69,3 +72,27 @@ scale = Vector2( 4.84, 4.84 )
 HP = 10
 isBoss = true
 BossNumber = 1
+
+[node name="Enemy" parent="." instance=ExtResource( 7 )]
+position = Vector2( 347.644, 284.051 )
+
+[node name="Enemy2" parent="." instance=ExtResource( 7 )]
+position = Vector2( 525.293, 402.484 )
+
+[node name="Enemy3" parent="." instance=ExtResource( 8 )]
+position = Vector2( 508.914, 228.614 )
+
+[node name="Enemy4" parent="." instance=ExtResource( 8 )]
+position = Vector2( 869.251, 441.541 )
+
+[node name="Enemy5" parent="." instance=ExtResource( 9 )]
+position = Vector2( 959.966, 165.618 )
+
+[node name="Enemy6" parent="." instance=ExtResource( 9 )]
+position = Vector2( 1108.64, 473.039 )
+
+[node name="Enemy7" parent="." instance=ExtResource( 8 )]
+position = Vector2( 1164.07, 161.839 )
+
+[node name="Enemy8" parent="." instance=ExtResource( 7 )]
+position = Vector2( 773.497, 311.769 )

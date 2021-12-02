@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Assets/groundtileset.tres" type="TileSet" id=1]
-[ext_resource path="res://Objects/Enemy.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Objects/Enemies/Enemy.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Objects/LevelTransition.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Objects/Player.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Stages/Pause.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Objects/Enemies/Spider.tscn" type="PackedScene" id=6]
 
 [node name="StageThree" type="Node2D"]
 
@@ -38,3 +39,12 @@ position = Vector2( 1169.3, 328.974 )
 
 [node name="Pause" parent="CanvasLayer" instance=ExtResource( 5 )]
 visible = false
+
+[node name="Enemy5" parent="." instance=ExtResource( 6 )]
+position = Vector2( 981.906, 166.852 )
+
+[node name="Enemy6" parent="." instance=ExtResource( 6 )]
+position = Vector2( 1025.32, 531.188 )
+
+[node name="Enemy7" parent="." instance=ExtResource( 6 )]
+position = Vector2( 113.541, 106.444 )

@@ -1,10 +1,11 @@
 [gd_scene load_steps=6 format=2]
 
-[ext_resource path="res://Objects/Enemy.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Objects/Enemies/Enemy.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Objects/LevelTransition.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Objects/Player.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Stages/Pause.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Assets/groundtileset.tres" type="TileSet" id=6]
+
 
 [node name="StageSeven" type="Node2D"]
 
