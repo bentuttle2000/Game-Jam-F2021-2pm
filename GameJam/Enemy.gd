@@ -1,7 +1,12 @@
 extends KinematicBody2D
 
 var is_dead = false;
+<<<<<<< Updated upstream
 const SPEED = 50;
+=======
+export var SPEED = 75;
+const BOSSONEPOWER = preload("res://Objects/MultiShotPowerUp.tscn");
+>>>>>>> Stashed changes
 var PlayerPosition = Vector2();
 var CurrentPosition = Vector2();
 var velocity = Vector2();
