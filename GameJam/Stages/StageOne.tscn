@@ -13,7 +13,6 @@
 [ext_resource path="res://Objects/IcePowerup.tscn" type="PackedScene" id=11]
 [ext_resource path="res://Objects/MultiShotPowerUp.tscn" type="PackedScene" id=12]
 
-
 [node name="StageOne" type="Node2D"]
 script = ExtResource( 5 )
 

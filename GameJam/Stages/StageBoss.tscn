@@ -65,8 +65,7 @@ position = Vector2( 672, 64 )
 
 [node name="Enemy10" parent="Node2d" instance=ExtResource( 2 )]
 position = Vector2( 672, 576 )
-
-
+scale = Vector2( 3, 3 )
 HP = 10
 isBoss = true
 BossNumber = 1
