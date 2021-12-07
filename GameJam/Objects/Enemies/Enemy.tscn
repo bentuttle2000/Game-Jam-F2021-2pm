@@ -35,12 +35,20 @@ animations = [ {
 "name": "Dead",
 "speed": 5.0
 }, {
-
+"frames": [ ExtResource( 6 ), ExtResource( 9 ), ExtResource( 3 ), ExtResource( 7 ) ],
+"loop": true,
+"name": "Idle",
+"speed": 12.0
+}, {
 "frames": [ ExtResource( 10 ), null, ExtResource( 10 ), null ],
 "loop": false,
 "name": "BossDead",
 "speed": 5.0
-
+}, {
+"frames": [ SubResource( 1 ), SubResource( 2 ), SubResource( 3 ), SubResource( 4 ) ],
+"loop": true,
+"name": "BossIdle",
+"speed": 8.0
 } ]
 
 [sub_resource type="RectangleShape2D" id=6]
@@ -56,7 +64,7 @@ script = ExtResource( 2 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 5 )
-animation = "Idle"
+animation = "BossIdle"
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 0.5
