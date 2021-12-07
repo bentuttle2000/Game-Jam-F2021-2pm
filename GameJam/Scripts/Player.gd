@@ -18,16 +18,17 @@ enum STATE {IDLE, MOVING, CHARGING, FIRING};
 var curState = STATE.IDLE;
 
 var goldCnt = 0;
-var spellNum = 0;
+var spellNum = Globalvars.spellNum;
 var chargeAmount = 1.0;
 const chargeRate = .025;
 const chargeMax = 2.0;
-var hp = 3;
+var hp = Globalvars.hp;
+var light_proj = 0;
 
 var isDead = false
 var vulnerable = true
 var active_shield = false
-var ice_powerup = false
+var ice_powerup = Globalvars.ice_powerup
 
 func _process(delta):
 	#aim wand at mouse
@@ -44,7 +45,7 @@ func _process(delta):
 			_move();
 			
 			
-		if (Input.is_action_just_pressed("right_click")) && (ice_powerup == true):
+		if (Input.is_action_just_pressed("right_click")) && (Globalvars.ice_powerup == true):
 			_ice_fire()
 	
 		if get_slide_count() > 0:
@@ -52,11 +53,11 @@ func _process(delta):
 					if "Enemy" in get_slide_collision(i).collider.name:
 						dead(1);
 						
-	if hp == 1:
+	if Globalvars.hp == 1:
 		$HealthBar.play("Health1")
-	if hp == 2:
+	if Globalvars.hp == 2:
 		$HealthBar.play("Health2")
-	if hp == 3:
+	if Globalvars.hp == 3:
 		$HealthBar.play("Health3")
 		
 	if active_shield == false:
@@ -129,7 +130,7 @@ func _charge():
 #written by Ben Tuttle
 func _fire():
 		curState = STATE.FIRING;
-		if spellNum == 0:
+		if Globalvars.spellNum == 0:
 			var inst = PROJECTILE.instance();
 			inst.position = get_child(0).getWandPosition();
 			get_parent().add_child(inst);
@@ -137,7 +138,7 @@ func _fire():
 			inst.set_power(chargeAmount);
 			chargeAmount = 1;
 			curState = STATE.IDLE;
-		elif spellNum == 1:
+		elif light_proj == 1:
 			var inst = LIGHTPROJECTILE.instance();
 			inst.position = get_child(0).getWandPosition();
 			get_parent().add_child(inst);
@@ -145,7 +146,7 @@ func _fire():
 			inst.set_power(chargeAmount);
 			chargeAmount = 1;
 			curState = STATE.IDLE;
-		elif spellNum == 2:
+		elif Globalvars.spellNum == 2:
 			var inst = PROJECTILE.instance();
 			var inst1 = PROJECTILE.instance();
 			var inst2 = PROJECTILE.instance();
@@ -173,10 +174,10 @@ func _fire():
 			curState = STATE.IDLE;
 
 func flashup_powerup():
-	spellNum = 1
+	light_proj = 1
 
 func multishot_powerup():
-	spellNum = 2
+	Globalvars.spellNum = 2
 
 
 func dead(damage):
@@ -184,17 +185,18 @@ func dead(damage):
 		return
 	
 	if vulnerable == true:
-		hp = hp - damage
+		Globalvars.hp = Globalvars.hp - damage
 		vulnerable = false
 		$DamageCooldown.start()
-		if  hp <= 0:
+		if  Globalvars.hp <= 0:
 			isDead = true
-			hp = 0
+			Globalvars.hp = 0
 			velocity = Vector2(0, 0)
 			$AnimatedSprite.play("Dead")
 			$HealthBar.play("Health0")
 			$CollisionShape2D.set_deferred("disabled", true)
 			$Timer.start()
+			
 
 #----Set active parameters for player physics which are rendered inactive upon entering dialogue----#
 #-Nick Mineo-#
@@ -206,16 +208,16 @@ func set_active(active):
 
 func _on_Timer_timeout():
 	get_tree().change_scene("res://Stages/LoseScreen.tscn")
-
+	Globalvars.reset_vars()
 
 func _on_DamageCooldown_timeout():
 	vulnerable = true
 	
 func health_pickup():
-	if hp < 3 && hp != 0:
-		hp = hp + 1
+	if Globalvars.hp < 3 && Globalvars.hp != 0:
+		Globalvars.hp = Globalvars.hp + 1
 	else:
-		hp = hp + 0
+		Globalvars.hp = Globalvars.hp + 0
 
 func shield_powerup():
 	$ShieldTimer.start()
@@ -223,7 +225,7 @@ func shield_powerup():
 	vulnerable = false
 	
 func ice_powerup():
-	ice_powerup = true
+	Globalvars.ice_powerup = true
 	
 func _on_ShieldTimer_timeout():
 	active_shield = false

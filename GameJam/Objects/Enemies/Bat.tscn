@@ -9,31 +9,31 @@ region = Rect2( 0, 0, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=2]
 atlas = ExtResource( 1 )
-region = Rect2( 32, 0, 32, 32 )
+region = Rect2( 0, 0, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=3]
 atlas = ExtResource( 1 )
-region = Rect2( 64, 0, 32, 32 )
+region = Rect2( 32, 0, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=4]
 atlas = ExtResource( 1 )
-region = Rect2( 96, 0, 32, 32 )
+region = Rect2( 64, 0, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=5]
 atlas = ExtResource( 1 )
-region = Rect2( 0, 0, 32, 32 )
+region = Rect2( 96, 0, 32, 32 )
 
 [sub_resource type="SpriteFrames" id=6]
 animations = [ {
-"frames": [ SubResource( 1 ), SubResource( 2 ), SubResource( 3 ), SubResource( 4 ) ],
-"loop": true,
-"name": "Idle",
-"speed": 12.0
-}, {
-"frames": [ SubResource( 5 ), null, SubResource( 5 ), null ],
+"frames": [ SubResource( 1 ), null, SubResource( 1 ), null ],
 "loop": true,
 "name": "Dead",
 "speed": 5.0
+}, {
+"frames": [ SubResource( 2 ), SubResource( 3 ), SubResource( 4 ), SubResource( 5 ) ],
+"loop": true,
+"name": "Idle",
+"speed": 12.0
 } ]
 
 [sub_resource type="RectangleShape2D" id=7]
@@ -63,4 +63,9 @@ shape = SubResource( 7 )
 [node name="DetectionRadius" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource( 8 )
 
+[node name="IceTimer" type="Timer" parent="."]
+wait_time = 4.0
+one_shot = true
+
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
+[connection signal="timeout" from="IceTimer" to="." method="_on_IceTimer_timeout"]

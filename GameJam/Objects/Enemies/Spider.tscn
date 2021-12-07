@@ -51,4 +51,8 @@ shape = SubResource( 4 )
 [node name="DetectionRadius" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource( 5 )
 
+[node name="IceTimer" type="Timer" parent="."]
+wait_time = 4.0
+
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
+[connection signal="timeout" from="IceTimer" to="." method="_on_IceTimer_timeout"]
