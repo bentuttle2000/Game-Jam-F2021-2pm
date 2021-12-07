@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Assets/groundtileset.tres" type="TileSet" id=1]
 [ext_resource path="res://Objects/Enemies/Enemy.tscn" type="PackedScene" id=2]
@@ -7,6 +7,8 @@
 [ext_resource path="res://Stages/Pause.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Assets/Effects/spot.png" type="Texture" id=6]
 [ext_resource path="res://Assets/Effects/light.png" type="Texture" id=7]
+[ext_resource path="res://Objects/ShieldPowerup.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Objects/HealthPickup.tscn" type="PackedScene" id=9]
 
 [node name="StageNine" type="Node2D"]
 
@@ -73,6 +75,7 @@ position = Vector2( 1057, 346.674 )
 visible = false
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
+visible = false
 position = Vector2( 248.582, 327.39 )
 color = Color( 0.0941176, 0.12549, 0.168627, 1 )
 
@@ -124,3 +127,15 @@ texture = ExtResource( 7 )
 texture_scale = 0.4
 color = Color( 0.498039, 0.498039, 0.498039, 1 )
 energy = 0.8
+
+[node name="ShieldPowerup" parent="." instance=ExtResource( 8 )]
+position = Vector2( 661.513, 326.052 )
+
+[node name="HealthPickup" parent="." instance=ExtResource( 9 )]
+position = Vector2( 382.44, 62.0987 )
+
+[node name="HealthPickup2" parent="." instance=ExtResource( 9 )]
+position = Vector2( 282.906, 583.706 )
+
+[node name="HealthPickup3" parent="." instance=ExtResource( 9 )]
+position = Vector2( 1002.32, 314.713 )
