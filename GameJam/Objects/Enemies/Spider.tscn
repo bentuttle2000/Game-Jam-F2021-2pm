@@ -13,15 +13,6 @@ region = Rect2( 32, 0, 32, 32 )
 
 [sub_resource type="SpriteFrames" id=3]
 animations = [ {
-"frames": [ SubResource( 1 ), null, SubResource( 1 ), null ],
-"loop": true,
-"name": "Dead",
-"speed": 5.0
-}, {
-"frames": [ SubResource( 1 ), SubResource( 2 ) ],
-"loop": true,
-"name": "Idle",
-"speed": 12.0
 } ]
 
 [sub_resource type="RectangleShape2D" id=4]
@@ -30,9 +21,7 @@ extents = Vector2( 10.3434, 14.0049 )
 [sub_resource type="CircleShape2D" id=5]
 radius = 120.539
 
-[node name="Enemy" type="KinematicBody2D"]
-collision_layer = 19
-collision_mask = 19
+
 script = ExtResource( 2 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]

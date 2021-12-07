@@ -16,26 +16,7 @@
 [ext_resource path="res://Assets/Health2.png" type="Texture" id=14]
 [ext_resource path="res://Assets/Shield.png" type="Texture" id=15]
 
-[sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 10.1725, 15.6982 )
 
-[sub_resource type="SpriteFrames" id=2]
-animations = [ {
-"frames": [ ExtResource( 5 ) ],
-"loop": true,
-"name": "IdleDown",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 4 ) ],
-"loop": true,
-"name": "IdleRight",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 6 ), ExtResource( 7 ), ExtResource( 10 ), ExtResource( 9 ), ExtResource( 8 ) ],
-"loop": false,
-"name": "Dead",
-"speed": 12.0
-}, {
 "frames": [ ExtResource( 1 ) ],
 "loop": true,
 "name": "IdleUp",
@@ -44,30 +25,10 @@ animations = [ {
 
 [sub_resource type="SpriteFrames" id=3]
 animations = [ {
-"frames": [ ExtResource( 12 ) ],
-"loop": true,
-"name": "Health3",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 11 ) ],
-"loop": true,
-"name": "Health0",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 14 ) ],
-"loop": true,
-"name": "Health2",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 13 ) ],
-"loop": true,
-"name": "Health1",
-"speed": 5.0
-} ]
-
-[sub_resource type="CircleShape2D" id=4]
 
 [node name="Player" type="KinematicBody2D"]
+collision_layer = 16385
+collision_mask = 16385
 script = ExtResource( 2 )
 
 [node name="Wand" parent="." instance=ExtResource( 3 )]
