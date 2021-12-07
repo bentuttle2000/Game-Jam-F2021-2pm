@@ -4,7 +4,7 @@ export var HP = 1
 export var isBoss = false;
 export var BossNumber = 0;
 var is_dead = false;
-const SPEED = 75;
+export(int) var SPEED = 75;
 const BOSSONEPOWER = preload("res://Objects/MultiShotPowerUp.tscn");
 var PlayerPosition = Vector2();
 var CurrentPosition = Vector2();
@@ -56,4 +56,10 @@ func dead():
 
 func _on_Timer_timeout():
 	queue_free();
-
+	
+func frozen():
+	$IceTimer.start()
+	SPEED = 0
+	
+func _on_IceTimer_timeout():
+	SPEED = 75
