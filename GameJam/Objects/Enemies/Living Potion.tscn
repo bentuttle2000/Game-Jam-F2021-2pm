@@ -21,15 +21,15 @@ region = Rect2( 96, 0, 32, 32 )
 
 [sub_resource type="SpriteFrames" id=5]
 animations = [ {
-"frames": [ SubResource( 1 ), null, SubResource( 1 ), null ],
-"loop": true,
-"name": "Dead",
-"speed": 5.0
-}, {
 "frames": [ SubResource( 1 ), SubResource( 2 ), SubResource( 3 ), SubResource( 4 ) ],
 "loop": true,
 "name": "Idle",
 "speed": 12.0
+}, {
+"frames": [ SubResource( 1 ), null, SubResource( 1 ), null ],
+"loop": true,
+"name": "Dead",
+"speed": 5.0
 } ]
 
 [sub_resource type="RectangleShape2D" id=6]
@@ -38,7 +38,7 @@ extents = Vector2( 10.3434, 14.0049 )
 [sub_resource type="CircleShape2D" id=7]
 radius = 120.539
 
-[node name="Enemy2" type="KinematicBody2D"]
+[node name="Enemy" type="KinematicBody2D"]
 collision_layer = 19
 collision_mask = 19
 script = ExtResource( 1 )
@@ -59,3 +59,11 @@ shape = SubResource( 6 )
 
 [node name="DetectionRadius" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource( 7 )
+
+[node name="StunTimer" type="Timer" parent="."]
+wait_time = 3.0
+
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_Area2D_body_exited"]
+[connection signal="timeout" from="StunTimer" to="." method="_on_StunTimer_timeout"]

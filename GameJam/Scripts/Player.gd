@@ -30,7 +30,7 @@ var vulnerable = true
 var active_shield = false
 var ice_powerup = Globalvars.ice_powerup
 
-func _process(delta):
+func _physics_process(delta):
 	#aim wand at mouse
 	if !isDead:
 		get_child(0).look_at(get_global_mouse_position());
