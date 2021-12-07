@@ -26,6 +26,8 @@ func _on_Projectile_body_entered(body):
 		power = power - 0.2;
 		if power <= 1.2:
 			queue_free();
+	elif "TileMap" in body.name:
+		queue_free();
 
 
 func _on_VisibilityNotifier2D_screen_exited():
