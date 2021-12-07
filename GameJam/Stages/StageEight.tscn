@@ -1,4 +1,4 @@
-
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Assets/groundtileset.tres" type="TileSet" id=1]
 [ext_resource path="res://Objects/Enemies/Enemy.tscn" type="PackedScene" id=2]
@@ -6,7 +6,6 @@
 [ext_resource path="res://Objects/Player.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Stages/Pause.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Assets/Effects/spot.png" type="Texture" id=6]
-
 
 [node name="StageEight" type="Node2D"]
 
@@ -66,4 +65,3 @@ visible = false
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 position = Vector2( 248.582, 327.39 )
 color = Color( 0.85098, 0.862745, 0.87451, 1 )
-
