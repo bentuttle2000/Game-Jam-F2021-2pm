@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://Assets/groundtileset.tres" type="TileSet" id=1]
 [ext_resource path="res://Assets/Effects/light.png" type="Texture" id=2]
@@ -11,6 +11,9 @@
 [ext_resource path="res://Assets/spritesheet_1.png" type="Texture" id=9]
 [ext_resource path="res://Stages/Pause.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Objects/Enemies/Bat.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Objects/ShieldPowerup.tscn" type="PackedScene" id=12]
+[ext_resource path="res://Objects/HealthPickup.tscn" type="PackedScene" id=13]
+[ext_resource path="res://Objects/IcePowerup.tscn" type="PackedScene" id=14]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 11.1463, 15.9906 )
@@ -102,3 +105,15 @@ position = Vector2( 385.532, 127.778 )
 
 [node name="Enemy4" parent="." instance=ExtResource( 11 )]
 position = Vector2( 120.957, 488.755 )
+
+[node name="HealthPickup" parent="." instance=ExtResource( 13 )]
+position = Vector2( 95.5, 586 )
+
+[node name="ShieldPowerup" parent="." instance=ExtResource( 12 )]
+position = Vector2( 1010, 401 )
+
+[node name="IcePowerup" parent="." instance=ExtResource( 14 )]
+position = Vector2( 628, 378.5 )
+
+[node name="HealthPickup2" parent="." instance=ExtResource( 13 )]
+position = Vector2( 959.5, 133 )
