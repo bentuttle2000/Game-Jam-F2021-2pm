@@ -138,7 +138,7 @@ func _fire():
 			inst.set_power(chargeAmount);
 			chargeAmount = 1;
 			curState = STATE.IDLE;
-		elif light_proj == 1:
+		elif Globalvars.spellNum == 1:
 			var inst = LIGHTPROJECTILE.instance();
 			inst.position = get_child(0).getWandPosition();
 			get_parent().add_child(inst);
@@ -174,7 +174,7 @@ func _fire():
 			curState = STATE.IDLE;
 
 func flashup_powerup():
-	light_proj = 1
+	Globalvars.spellNum = 1
 
 func multishot_powerup():
 	Globalvars.spellNum = 2
