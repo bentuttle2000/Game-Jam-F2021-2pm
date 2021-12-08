@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Assets/groundtileset.tres" type="TileSet" id=1]
 [ext_resource path="res://Objects/Enemies/Enemy.tscn" type="PackedScene" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://Objects/Enemies/Living Potion.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Objects/HealthPickup.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Objects/ShieldPowerup.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Objects/IcePowerup.tscn" type="PackedScene" id=9]
 
 [node name="StageFive" type="Node2D"]
 
@@ -54,7 +55,10 @@ position = Vector2( 704, 160 )
 position = Vector2( 42.9812, 324.037 )
 
 [node name="ShieldPowerup" parent="." instance=ExtResource( 8 )]
-position = Vector2( 162, 408 )
+position = Vector2( 384.382, 344.972 )
+
+[node name="IcePowerup" parent="ShieldPowerup" instance=ExtResource( 9 )]
+position = Vector2( -278.436, 93.9308 )
 
 [node name="HealthPickup" parent="." instance=ExtResource( 7 )]
-position = Vector2( 426.5, 260 )
+position = Vector2( 660.774, 326.596 )
