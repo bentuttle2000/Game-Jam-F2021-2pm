@@ -70,7 +70,7 @@ position = Vector2( 896, 104 )
 position = Vector2( 896, 592 )
 
 [node name="Enemy10" parent="Enemies" instance=ExtResource( 2 )]
-position = Vector2( 1900.16, 528.182 )
+position = Vector2( 1901.85, 533.243 )
 scale = Vector2( 3, 3 )
 HP = 10
 isBoss = true

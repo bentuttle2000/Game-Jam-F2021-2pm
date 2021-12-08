@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Living_potiondead.png-dcb2a865493b9123259d390ccd4df7ba.stex"
+path="res://.import/infobook.png-613e38a6feaa2230324d0d89d803c8a3.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Enemies/Living_potiondead.png"
-dest_files=[ "res://.import/Living_potiondead.png-dcb2a865493b9123259d390ccd4df7ba.stex" ]
+source_file="res://Stages/infobook.png"
+dest_files=[ "res://.import/infobook.png-613e38a6feaa2230324d0d89d803c8a3.stex" ]
 
 [params]
 

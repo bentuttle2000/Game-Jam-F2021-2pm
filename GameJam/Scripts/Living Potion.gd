@@ -63,7 +63,15 @@ func _on_Area2D_body_entered(body):
 func _on_Area2D_body_exited(body):
 	if "Player" in body.name:
 		player = null
+		
+func frozen():
+	$IceTimer.start()
+	SPEED = 0
 
 
 func _on_StunTimer_timeout():
 	stun = false
+
+
+func _on_IceTimer_timeout():
+	SPEED = 75 # Replace with function body.

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Living_potiondead.png-dcb2a865493b9123259d390ccd4df7ba.stex"
+path="res://.import/trapdoortransition.png-bc91d88cfcf484f9a5be5267d88020b2.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Enemies/Living_potiondead.png"
-dest_files=[ "res://.import/Living_potiondead.png-dcb2a865493b9123259d390ccd4df7ba.stex" ]
+source_file="res://Assets/trapdoortransition.png"
+dest_files=[ "res://.import/trapdoortransition.png-bc91d88cfcf484f9a5be5267d88020b2.stex" ]
 
 [params]
 
@@ -20,7 +20,7 @@ compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=false
+flags/filter=true
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2
